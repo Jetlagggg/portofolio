@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yoshua Pandawinatha — Fullstack Developer & IoT",
+  title: "Yoshua Pandawinatha — Portofolio",
   description:
-    "Laboratorium digital Yoshua Pandawinatha. Mahasiswa Teknik Informatika STMIK Widya Cipta Dharma, Samarinda. Fullstack web developer & IoT enthusiast.",
+    "Portofolio Yoshua Pandawinatha, mahasiswa Teknik Informatika di Samarinda. Proyek pengembangan web, IoT, dan eksplorasi analisis data.",
   openGraph: {
-    title: "Yoshua Pandawinatha — Fullstack Developer & IoT",
+    title: "Yoshua Pandawinatha — Portofolio",
     description:
-      "Laboratorium digital Yoshua Pandawinatha. Fullstack web developer & IoT enthusiast berbasis di Samarinda.",
+      "Portofolio Yoshua Pandawinatha: proyek web, IoT, dan eksplorasi analisis data dari Samarinda.",
     type: "website",
   },
 };

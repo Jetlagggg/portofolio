@@ -5,22 +5,27 @@ import { About } from "@/components/about";
 import { Services } from "@/components/services";
 import { Works } from "@/components/works";
 import { Skills } from "@/components/skills";
-import { Experience } from "@/components/experience";
 import { FAQ } from "@/components/faq";
 import { Footer } from "@/components/footer";
 
 export default function Page() {
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Lewati ke konten
+      </a>
       <Navbar />
       <LabBackground />
-      <main className="flex-1">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="flex-1 focus-visible:outline-none"
+      >
         <Hero />
+        <Works />
         <About />
         <Services />
-        <Works />
         <Skills />
-        <Experience />
         <FAQ />
       </main>
       <Footer />

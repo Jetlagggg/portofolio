@@ -12,6 +12,8 @@ export function SectionHeader({
   description?: string;
   className?: string;
 }) {
+  const centered = className.includes("text-center");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -22,11 +24,15 @@ export function SectionHeader({
     >
       <h2 className="display-title text-foreground">{title}</h2>
       {description && (
-        <p className="mt-4 max-w-xl text-base sm:text-lg text-foreground-secondary leading-relaxed">
+        <p
+          className={`mt-4 max-w-xl text-base sm:text-lg text-foreground-secondary leading-relaxed ${
+            centered ? "mx-auto" : ""
+          }`}
+        >
           {description}
         </p>
       )}
-      <div className={`tick-rule mt-8 ${className.includes("text-center") ? "mx-auto w-24" : "w-16"}`} />
+      <div className={`tick-rule mt-8 ${centered ? "mx-auto w-24" : "w-16"}`} />
     </motion.div>
   );
 }

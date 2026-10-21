@@ -34,7 +34,7 @@ export const skills: SkillGroup[] = [
     items: [
       { name: "Arduino", symbol: "Ar" },
       { name: "ESP32", symbol: "E3" },
-      { name: "Sensor Integration", symbol: "Sn" },
+      { name: "Integrasi Sensor", symbol: "Sn" },
     ],
   },
   {

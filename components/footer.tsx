@@ -3,16 +3,15 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { useLocalTime } from "@/lib/use-local-time";
-import { MessageCircle, Clock, Heart, ArrowUp, Mail } from "lucide-react";
+import { MessageCircle, Clock, ArrowUp, Mail } from "lucide-react";
 import { FaLinkedin as Linkedin, FaGithub as Github } from "react-icons/fa";
 import { contact, waHref, mailHref } from "@/data/contact";
 
 const navLinks = [
+  { label: "Proyek", href: "#works" },
   { label: "Tentang", href: "#about" },
   { label: "Layanan", href: "#services" },
-  { label: "Proyek", href: "#works" },
   { label: "Skill", href: "#skills" },
-  { label: "Pengalaman", href: "#experience" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -33,10 +32,10 @@ export function Footer() {
   return (
     <footer id="footer" className="relative bg-marquee-bg text-marquee-text overflow-hidden">
       {/* Marquee strip */}
-      <div className="py-5 border-b border-white/10">
+      <div className="py-5 border-b border-white/10" aria-hidden="true">
         {reduceMotion ? (
           <p className="text-center text-2xl sm:text-4xl font-black tracking-tight uppercase">
-            Mari Berekspesimen
+            Mari Bereksperimen
           </p>
         ) : (
           <Marquee gradient={false} speed={30} className="overflow-hidden">
@@ -47,7 +46,7 @@ export function Footer() {
                     i % 2 === 0 ? "text-marquee-text" : "strip-outline"
                   }`}
                 >
-                  Mari Berekspesimen
+                  Mari Bereksperimen
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               </span>
@@ -71,11 +70,17 @@ export function Footer() {
             Kita racik bareng.
           </h2>
           <p className="text-marquee-text/70 mb-9 max-w-lg mx-auto leading-relaxed">
-            Punya proyek menarik atau ingin berdiskusi? Jangan ragu untuk menghubungi saya.
+            Ceritakan proyek atau ide yang sedang Anda pikirkan.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {wa && (
-              <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-primary" id="footer-wa">
+              <a
+                href={wa}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary !bg-marquee-text !text-marquee-bg"
+                id="footer-wa"
+              >
                 <MessageCircle className="w-4 h-4" />
                 Hubungi via WhatsApp
               </a>
@@ -95,8 +100,8 @@ export function Footer() {
                 href={contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
-                id="footer-wa"
+                className="btn-primary !bg-marquee-text !text-marquee-bg"
+                id="footer-contact-fallback"
               >
                 <Github className="w-4 h-4" />
                 Hubungi via GitHub
@@ -113,13 +118,12 @@ export function Footer() {
               <span>YP</span>
               <span className="text-accent">.</span>
             </a>
-            <p className="text-sm text-marquee-text/60 mt-4 leading-relaxed">
-              Mahasiswa Teknik Informatika & Fullstack Web Developer berbasis di Samarinda,
-              Kalimantan Timur.
+            <p className="text-sm text-marquee-text/70 mt-4 leading-relaxed">
+              Mahasiswa Teknik Informatika berbasis di Samarinda, Kalimantan Timur.
             </p>
             {/* Live Clock */}
-            <div className="flex items-center gap-2 text-sm text-marquee-text/60 mt-6">
-              <Clock className="w-4 h-4 text-primary" />
+            <div className="flex items-center gap-2 text-sm text-marquee-text/70 mt-6">
+              <Clock className="w-4 h-4 text-marquee-text/80" />
               <span>Samarinda, WITA —</span>
               <span className="font-mono font-medium text-marquee-text">
                 {time || "--:--:--"}
@@ -129,7 +133,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-semibold text-marquee-text mb-4">Navigasi</h4>
+            <h3 className="text-sm font-semibold text-marquee-text mb-4">Navigasi</h3>
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -146,7 +150,7 @@ export function Footer() {
 
           {/* Socials */}
           <div>
-            <h4 className="text-sm font-semibold text-marquee-text mb-4">Koneksi</h4>
+            <h3 className="text-sm font-semibold text-marquee-text mb-4">Kontak</h3>
             <div className="flex gap-2.5">
               {socials.map((social) => (
                 <a
@@ -162,18 +166,16 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            <p className="text-sm text-marquee-text/50 mt-6 leading-relaxed">
-              Respon biasanya dalam{" "}
-              <span className="text-marquee-text font-medium">1×24 jam</span> di hari kerja.
+            <p className="text-sm text-marquee-text/70 mt-6 leading-relaxed">
+              Terbuka untuk diskusi proyek, kolaborasi, dan peluang kerja.
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-marquee-text/50 flex items-center gap-1.5">
-            © {new Date().getFullYear()} Yoshua Pandawinatha. Dibuat dengan{" "}
-            <Heart className="w-3 h-3 text-accent inline" /> di Samarinda.
+          <p className="text-xs text-marquee-text/70">
+            © {new Date().getFullYear()} Yoshua Pandawinatha. Dibuat di Samarinda.
           </p>
           <button
             onClick={() =>
@@ -184,8 +186,8 @@ export function Footer() {
                   : "smooth",
               })
             }
-            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer"
-            aria-label="Scroll ke atas"
+            className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer"
+            aria-label="Kembali ke atas"
             id="scroll-to-top"
           >
             <ArrowUp className="w-4 h-4 text-marquee-text/80" />

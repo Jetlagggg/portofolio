@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "./section-header";
 
-const interests = ["Fullstack Web Dev", "IoT", "UI/UX", "Problem Solving"];
+const interests = ["Web Dev", "IoT", "Analisis Data", "UI/UX", "Pemecahan Masalah"];
 
 export function About() {
   return (
-    <section id="about" className="section-padding bg-background-secondary noise overflow-hidden">
+    <section id="about" className="section-padding noise overflow-hidden">
       <div className="relative max-w-6xl mx-auto">
-        <SectionHeader title="Profil Peneliti" />
+        <SectionHeader title="Tentang Saya" />
 
         <div className="grid md:grid-cols-2 gap-6 items-start">
           {/* Philosophy */}
@@ -20,19 +20,17 @@ export function About() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="card p-7 sm:p-10 md:sticky md:top-24"
           >
-            <p className="label mb-4">Catatan Lapangan 001</p>
+            <p className="label mb-4">Catatan Lapangan</p>
             <p className="text-xl sm:text-2xl font-semibold leading-snug text-foreground mb-6 text-balance">
               Teknologi terbaik adalah yang mampu menyelesaikan masalah nyata.
             </p>
             <p className="text-foreground-secondary leading-relaxed mb-4">
-              Dengan kombinasi web development dan IoT, saya berusaha menciptakan solusi
-              yang tidak hanya berfungsi dengan baik, tetapi juga memberikan pengalaman
-              pengguna yang luar biasa.
+              Saya menggabungkan pengembangan web dan IoT untuk membangun solusi
+              yang berfungsi baik dan nyaman digunakan.
             </p>
             <p className="text-foreground-secondary leading-relaxed">
-              Fokus utama saya adalah membangun aplikasi fullstack yang responsif,
-              performa tinggi, dan bisa diintegrasikan dengan perangkat IoT untuk solusi
-              yang lebih komprehensif.
+              Fokus saya adalah aplikasi web yang responsif, cepat, dan terhubung
+              dengan perangkat IoT.
             </p>
             <div className="mt-8 pt-6 border-t border-border">
               <p className="label mb-3">Minat</p>
@@ -59,7 +57,6 @@ export function About() {
                 <dt className="label mb-1.5">Pendidikan</dt>
                 <dd className="font-bold text-foreground text-lg">S1 Teknik Informatika</dd>
                 <dd className="text-sm text-foreground-secondary">STMIK Widya Cipta Dharma</dd>
-                <dd className="text-xs font-mono text-muted-foreground mt-1">NIM: 2343074</dd>
               </div>
               <div className="border-t border-border pt-6">
                 <dt className="label mb-1.5">Lokasi</dt>

@@ -1,7 +1,7 @@
 export const contact = {
-  whatsapp: "",
-  email: "",
-  linkedin: "",
+  whatsapp: "6285173163034",
+  email: "yoshuapandawinatha@gmail.com",
+  linkedin: "https://www.linkedin.com/in/yoshua-pandawinatha-090597262/",
   github: "https://github.com/Jetlagggg",
   cv: "",
 };

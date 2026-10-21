@@ -23,7 +23,7 @@ export function Skills() {
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           title="Tabel Periodik Keahlian"
-          description="Setiap keahlian diperlakukan sebagai elemen murni: simbol, nomor atom, dan nama."
+          description="Keahlian yang saya gunakan untuk membangun aplikasi web, sistem, dan perangkat IoT."
         />
 
         <div className="space-y-10">
@@ -49,13 +49,13 @@ export function Skills() {
                         categoryStrip[group.category] ?? "border-t-primary"
                       } rounded-lg p-3 pt-2 aspect-square flex flex-col justify-between hover:bg-card-hover hover:shadow-sm transition-colors duration-300`}
                     >
-                      <span className="label !text-[0.58rem] !tracking-[0.08em]">
+                      <span className="label !text-[0.62rem] !tracking-[0.08em]">
                         {String(group.start + idx).padStart(2, "0")}
                       </span>
                       <span className="text-2xl sm:text-[1.7rem] font-bold text-foreground text-center leading-none">
                         {item.symbol}
                       </span>
-                      <span className="text-[0.6rem] text-foreground-secondary text-center leading-tight line-clamp-2">
+                      <span className="text-[0.7rem] text-foreground-secondary text-center leading-tight line-clamp-2">
                         {item.name}
                       </span>
                     </motion.div>

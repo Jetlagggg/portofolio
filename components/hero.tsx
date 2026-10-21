@@ -53,12 +53,14 @@ export function Hero() {
           transition={{ delay: 0.1, duration: 0.6, ease }}
           className="flex justify-center mb-10"
         >
-          <div className="glass inline-flex items-center gap-2.5 rounded-full px-4 py-2">
-            <span className="w-2 h-2 rounded-full bg-green-500" />
-            <span className="text-xs font-semibold tracking-wide">Lab aktif — terbuka untuk eksperimen</span>
-            <span className="w-px h-3 bg-border" />
-            <MapPin className="w-3 h-3 text-primary" />
-            <span className="text-xs text-foreground-secondary">Samarinda, ID</span>
+          <div className="glass inline-flex max-w-full items-center gap-2.5 rounded-full px-4 py-2">
+            <span className="w-2 h-2 shrink-0 rounded-full bg-green-500" />
+            <span className="text-xs font-semibold tracking-wide">Terbuka untuk proyek &amp; kolaborasi</span>
+            <span className="hidden sm:flex items-center gap-2.5">
+              <span className="w-px h-3 bg-border" />
+              <MapPin className="w-3 h-3 text-primary" />
+              <span className="text-xs text-foreground-secondary">Samarinda, ID</span>
+            </span>
           </div>
         </motion.div>
 
@@ -127,8 +129,8 @@ export function Hero() {
         </motion.div>
 
         {/* Headline */}
-        <h1 className="text-center text-[clamp(2.75rem,9vw,6rem)] font-bold tracking-[-0.035em] leading-[1] mb-6 text-foreground">
-          <RevealLine delay={0.35}>YOSHUA</RevealLine>
+        <h1 className="text-center text-[clamp(1.85rem,8.5vw,6rem)] font-bold tracking-[-0.035em] leading-[1] mb-6 text-foreground">
+          <RevealLine delay={0.35}>YOSHUA</RevealLine>{" "}
           <RevealLine delay={0.48}>PANDAWINATHA</RevealLine>
         </h1>
 
@@ -141,9 +143,9 @@ export function Hero() {
         >
           <span className="hidden sm:block h-px w-12 bg-border" />
           <span className="label text-foreground-secondary text-center">
-            Fullstack Developer
+            Web Developer
             <span className="text-accent mx-2">·</span>
-            IoT Enthusiast
+            IoT
           </span>
           <span className="hidden sm:block h-px w-12 bg-border" />
         </motion.div>
@@ -155,8 +157,8 @@ export function Hero() {
           transition={{ delay: 0.75, duration: 0.6, ease }}
           className="text-foreground-secondary max-w-xl mx-auto mb-8 leading-relaxed text-center"
         >
-          Mahasiswa Teknik Informatika yang passionate dalam membangun solusi digital
-          melalui web development dan Internet of Things.
+          Mahasiswa Teknik Informatika yang membangun aplikasi web dan sistem
+          IoT, sekaligus memperluas kemampuan ke analisis data.
         </motion.p>
 
         {/* CTAs */}
@@ -168,7 +170,7 @@ export function Hero() {
         >
           <a href="#works" className="btn-primary" id="cta-projects">
             <FlaskConical className="w-4 h-4" />
-            Lihat Eksperimen
+            Lihat Proyek
           </a>
           {contact.cv && (
             <a href={contact.cv} className="btn-secondary" id="cta-resume">
@@ -180,14 +182,14 @@ export function Hero() {
 
         {/* Scroll hint */}
         <motion.a
-          href="#about"
+          href="#works"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.8 }}
           className="hidden sm:flex flex-col items-center gap-2 mx-auto mt-16 w-fit text-muted-foreground hover:text-primary transition-colors"
-          aria-label="Scroll ke bawah"
+          aria-label="Lihat proyek"
         >
-          <span className="label">Scroll</span>
+          <span className="label">Proyek</span>
           <motion.span
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}

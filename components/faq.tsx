@@ -7,31 +7,30 @@ import { SectionHeader } from "./section-header";
 
 const faqs = [
   {
-    question: "Apakah Anda tersedia untuk kerja remote?",
+    question: "Apakah Anda tersedia untuk kerja jarak jauh?",
     answer:
-      "Ya, saya terbuka untuk peluang kerja remote maupun on-site di area Samarinda dan sekitarnya. Saya terbiasa bekerja secara mandiri dan berkolaborasi melalui tools digital.",
+      "Ya, saya terbuka untuk kerja jarak jauh maupun di Samarinda dan sekitarnya. Saya terbiasa bekerja mandiri dan berkolaborasi secara daring.",
   },
   {
-    question: "Stack teknologi apa yang paling Anda kuasai?",
+    question: "Teknologi apa yang paling Anda kuasai?",
     answer:
       "Saya paling nyaman dengan Next.js dan React untuk frontend, serta Laravel untuk backend. Untuk IoT, saya berpengalaman dengan Arduino dan ESP32.",
   },
   {
-    question: "Berapa lama estimasi pengerjaan sebuah proyek web?",
+    question: "Berapa lama pengerjaan satu proyek web?",
     answer:
-      "Tergantung kompleksitas, website sederhana bisa selesai dalam 1-2 minggu, sedangkan aplikasi web fullstack biasanya 1-2 bulan. Saya selalu memberikan estimasi detail sebelum mulai.",
+      "Waktunya tergantung kompleksitas. Website sederhana bisa selesai dalam 1–2 minggu, sedangkan aplikasi web yang lebih kompleks biasanya 1–2 bulan. Saya akan memberi estimasi rinci sebelum pekerjaan dimulai.",
   },
   {
-    question: "Apakah bisa mengerjakan proyek IoT juga?",
+    question: "Apakah Anda juga mengerjakan proyek IoT?",
     answer:
-      "Tentu! Saya bisa mengerjakan proyek yang menggabungkan perangkat IoT dengan web dashboard. Dari sensor reading hingga kontrol perangkat real-time melalui web.",
+      "Tentu. Saya bisa mengerjakan proyek yang menggabungkan perangkat IoT dengan dasbor web, dari membaca sensor hingga mengontrol perangkat secara real-time.",
   },
   {
     question: "Bagaimana cara menghubungi Anda?",
     answer:
-      "Anda bisa menghubungi saya melalui kanal kontak yang tersedia di bagian Koneksi (footer halaman ini). Respon biasanya dalam 1x24 jam di hari kerja.",
+      "Anda bisa menghubungi saya lewat WhatsApp atau email di bagian bawah halaman ini.",
   },
-  // TODO: sesuaikan FAQ
 ];
 
 function AccordionItem({
@@ -58,6 +57,7 @@ function AccordionItem({
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer group"
         id={`faq-${index}`}
         aria-expanded={isOpen}
+        aria-controls={`faq-panel-${index}`}
       >
         <span className="flex items-center gap-4">
           <span
@@ -83,6 +83,9 @@ function AccordionItem({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={`faq-panel-${index}`}
+            role="region"
+            aria-labelledby={`faq-${index}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -108,8 +111,8 @@ export function FAQ() {
     <section id="faq" className="section-padding">
       <div className="max-w-3xl mx-auto">
         <SectionHeader
-          title="Lembar Pertanyaan"
-          description="Dokumentasi standar: jawaban untuk pertanyaan yang sering diajukan"
+          title="Pertanyaan Umum"
+          description="Hal yang sering ditanyakan sebelum memulai proyek."
           className="text-center"
         />
 
